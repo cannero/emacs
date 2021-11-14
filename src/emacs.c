@@ -21,6 +21,10 @@ along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.  */
 #define INLINE EXTERN_INLINE
 #include <config.h>
 
+//#define EMACS_EXPORT
+//#include "emacs.h"
+
+
 #include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -1192,7 +1196,7 @@ maybe_load_seccomp (int argc, char **argv)
 #endif  /* SECCOMP_USABLE */
 
 int
-main (int argc, char **argv)
+main_entry (int argc, char **argv)
 {
   /* Variable near the bottom of the stack, and aligned appropriately
      for pointers.  */

@@ -1,0 +1,8 @@
+* open [0/1]
+- [ ] entry point
+  -Wl,-entry,__start
+  check ld def
+- [ ] include emacs.h header
+* commands
+- ./configure CFLAGS='' --without-pop --without-dbus
+- make -j6 > compout 2>&1
