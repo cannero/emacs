@@ -21,8 +21,8 @@ along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.  */
 #define INLINE EXTERN_INLINE
 #include <config.h>
 
-//#define EMACS_EXPORT
-//#include "emacs.h"
+#define EMACS_EXPORT
+#include "emacs.h"
 
 
 #include <errno.h>
@@ -1196,7 +1196,7 @@ maybe_load_seccomp (int argc, char **argv)
 #endif  /* SECCOMP_USABLE */
 
 int
-main_entry (int argc, char **argv)
+main (int argc, char **argv)
 {
   /* Variable near the bottom of the stack, and aligned appropriately
      for pointers.  */
@@ -2349,6 +2349,14 @@ Using an Emacs configured with --with-x-toolkit=lucid does not have this problem
   Frecursive_edit ();
   eassume (false);
 }
+
+int
+main_func (void)
+{
+  char *input[] = {""};/* {"C:/progra/c/emacs/src/emacscaller.exe"};*/
+  return main(1, input);
+}
+
 
 /* Sort the args so we can find the most important ones
    at the beginning of argv.  */

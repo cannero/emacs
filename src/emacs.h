@@ -7,6 +7,6 @@
    #define CLASS_DECLSPEC __declspec(dllimport)
 #endif
 
-extern CLASS_DECLSPEC int main_entry(int, char**);
+CLASS_DECLSPEC int main_func(void);
 
 #endif
